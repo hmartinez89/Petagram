@@ -3,4 +3,10 @@
     <dimen name="elev_actionbar">4dp</dimen>
     <dimen name="padding_actionbar">30dp</dimen>
     <dimen name="textSize_actionbar">40sp</dimen>
+    <dimen name="cornerRadius_cardview">4dp</dimen>
+    <dimen name="mrgIzq_imgBtnHuesoLike_cardview">15dp</dimen>
+    <dimen name="mrgIzq_tvNombre_cardview">20dp</dimen>
+    <dimen name="mrgIzq_tvLikes_cardview">189dp</dimen>
+    <dimen name="mrgDer_tvLikes_cardview">1dp</dimen>
+    <dimen name="mrgAba_ivFoto_cardview">20dp</dimen>
 </resources>

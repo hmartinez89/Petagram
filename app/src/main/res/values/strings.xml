@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Petagram</string>
+    <string name="tvNombre_cardview">Nombre</string>
+    <string name="tvLikes_cardview">0</string>
 </resources>
