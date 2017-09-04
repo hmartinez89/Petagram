@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tbPetagram"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/colorPrimary"
-    app:titleTextColor="@color/primary_text"
-    android:elevation="@dimen/elev_actionbar">
-
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:drawableStart="@drawable/icons8_cat_footprint_filled_50"
-            android:drawableEnd="@drawable/icons8_hotel_48"
-            android:text="@string/app_name"
-            android:fontFamily="cursive"
-            android:textSize="@dimen/textSize_actionbar"
-            android:gravity="center"
-            android:textAlignment="gravity"
-            android:paddingStart="@dimen/padding_actionbar"
-            android:paddingEnd="@dimen/padding_actionbar">
-            </TextView>
-    </android.support.v7.widget.LinearLayoutCompat>
-</android.support.v7.widget.Toolbar>
+    android:elevation="@dimen/elev_actionbar"
+    app:logo="@drawable/icons8_cat_footprint_filled_50"
+    app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+    app:title="@string/app_name"
+    app:titleMarginStart="@dimen/mrgIzq_tvNombre_cardview"
+    app:titleTextAppearance="@style/TextAppearance.AppCompat.Body1"
+    app:titleTextColor="@color/primary_text"></android.support.v7.widget.Toolbar>

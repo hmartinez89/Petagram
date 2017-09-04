@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.hmartinez.petagram.ListaMascotas">
 
-    <include android:id="@+id/actionBarPetagram"
-        layout="@layout/actionbar">
-        </include>
+    <include layout="@layout/actionbar"
+        android:id="@+id/abListaMascotas" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvMascotas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/actionBarPetagram"/>
-
+        android:layout_below="@+id/abListaMascotas"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

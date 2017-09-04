@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.hmartinez.petagram.MascotasFavoritas">
 
-    <include android:id="@+id/actionBarPetagram"
-        layout="@layout/actionbar"></include>
+    <include layout="@layout/actionbar"
+        android:id="@+id/abMascotasFav" />
 </android.support.constraint.ConstraintLayout>

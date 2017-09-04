@@ -2,4 +2,7 @@
     <string name="app_name">Petagram</string>
     <string name="tvNombre_cardview">Nombre</string>
     <string name="tvLikes_cardview">0</string>
+    <string name="mMascotasFav_menu">Mascotas Favoritas</string>
+    <string name="mascotasFav_param">Mascota%1$d</string>
+    <string name="totalMascotasFav_param">Total Mascotas Favoritas</string>
 </resources>

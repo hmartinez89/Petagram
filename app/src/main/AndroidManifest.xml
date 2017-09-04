@@ -25,5 +25,4 @@
                android:value=".ListaMascotas"></meta-data>
         </activity>
     </application>
-
 </manifest>
