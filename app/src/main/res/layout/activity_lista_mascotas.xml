@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hmartinez.petagram.ListaMascotas">
 
-    <include layout="@layout/actionbar"
-        android:id="@+id/abListaMascotas" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvMascotas"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/abListaMascotas"
-        android:layout_alignParentStart="true" />
-</RelativeLayout>
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/actionbar"
+            android:id="@+id/abListaMascotas">
+        </include>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tlListaMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/abListaMascotas">
+        </android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpListaMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_below="@id/tlListaMascotas">
+        </android.support.v4.view.ViewPager>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

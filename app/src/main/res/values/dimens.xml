@@ -6,4 +6,5 @@
     <dimen name="mrgIzq_tvNombre_cardview">30dp</dimen>
     <dimen name="mrgDer_tvLikes_cardview">1dp</dimen>
     <dimen name="mrgAba_ivFoto_cardview">20dp</dimen>
+    <dimen name="hgt_tietComentarios_contacto">150dp</dimen>
 </resources>

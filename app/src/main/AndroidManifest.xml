@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hmartinez.petagram">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,13 +18,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MascotasFavoritas"
+        <activity
+            android:name=".MascotasFavoritas"
             android:parentActivityName=".ListaMascotas">
 
-           <!--Soporte versiones anteriores a 4.0-->
-           <meta-data
-               android:name="android.support.PARENT_ACTIVITY"
-               android:value=".ListaMascotas"></meta-data>
+            <!-- Soporte versiones anteriores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaMascotas" />
+        </activity>
+        <activity
+            android:name=".Contacto"
+            android:parentActivityName=".ListaMascotas">
+
+            <!-- Soporte versiones anteriores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaMascotas" />
+        </activity>
+        <activity
+            android:name=".About"
+            android:parentActivityName=".ListaMascotas">
+
+            <!-- Soporte versiones anteriores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaMascotas" />
         </activity>
     </application>
+
 </manifest>

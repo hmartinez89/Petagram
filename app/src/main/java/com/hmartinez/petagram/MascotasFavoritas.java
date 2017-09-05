@@ -12,12 +12,8 @@ public class MascotasFavoritas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mascotas_favoritas);
 
-        Toolbar abMascotasFav = (Toolbar) findViewById(R.id.abMascotasFav);
+        Toolbar abMascotasFav = (Toolbar) findViewById(R.id.tbGeneral);
         setSupportActionBar(abMascotasFav);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Bundle extras = this.getIntent().getExtras();
-        Mascota[] aMascotasFav = new Mascota[(int) extras.get(String.valueOf(R.string.totalMascotasFav_param))];
-
     }
 }
