@@ -45,13 +45,6 @@ public class ListaMascotas extends AppCompatActivity{
         switch(item.getItemId()){
             case R.id.mMascotasFav:
                 i = new Intent(this, MascotasFavoritas.class);
-                /*Collections.sort(alMascotas, Mascota.likesMascotas);
-                int n=0;
-                while(n<5 && alMascotas.get(n).getsLikes()!="0"){
-                    i.putExtra(String.format(getResources().getString(R.string.mascotasFav_param),n),alMascotas.get(n));
-                    n++;
-                }
-                i .putExtra(String.valueOf(R.string.totalMascotasFav_param), n);*/
                 startActivity(i);
                 break;
 
@@ -79,5 +72,8 @@ public class ListaMascotas extends AppCompatActivity{
     private void setUpViewPager(){
         vpListaMascotas.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
         tlListaMascotas.setupWithViewPager(vpListaMascotas);
+
+        tlListaMascotas.getTabAt(0).setIcon(R.mipmap.ic_tabhome);
+        tlListaMascotas.getTabAt(1).setIcon(R.mipmap.ic_rollo);
     }
 }

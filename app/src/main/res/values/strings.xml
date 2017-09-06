@@ -11,6 +11,11 @@
     <string name="tietMail_contacto">E-Mail</string>
     <string name="tietComentarios_contacto">Envía tus comentarios</string>
     <string name="btnEnviarComentario_contacto">Enviar Comentario</string>
+    <string name="tvTituloAbout">Acerca del desarrollador...</string>
+    <string name="tvAbout">Harold Martinez es un mexicano de 28 años de edad
+    sin previa experiencia en el mundo de la programación. Actualmente busca
+    aprender a desarrollar en Android para comenzar a crecer en el mundo del
+    desarrollo de apps.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

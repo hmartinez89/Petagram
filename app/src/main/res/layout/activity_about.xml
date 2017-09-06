@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hmartinez.petagram.About">
+
+    <include layout="@layout/actionbar"
+        android:id="@+id/abAbout"></include>
+    <TextView
+        android:id="@+id/tvTituloAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvTituloAbout"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/tvTituloAbout"
+        android:layout_below="@+id/abAbout"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/tvAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvAbout"
+        android:textSize="@dimen/tvAbout_acercade"
+        android:textAlignment="center"
+        android:textColor="@color/primary_text"
+        android:layout_below="@+id/abAbout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/tvAbout" />
+</RelativeLayout>
