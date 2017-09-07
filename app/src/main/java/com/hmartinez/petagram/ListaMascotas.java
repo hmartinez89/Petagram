@@ -16,14 +16,16 @@ import com.hmartinez.petagram.fragments.HomeFragment;
 
 import java.util.ArrayList;
 
-public class ListaMascotas extends AppCompatActivity{
+public class ListaMascotas extends AppCompatActivity {
 
+    public static ArrayList<Mascota> alMascotas;
     private Toolbar abListaMascotas;
     private TabLayout tlListaMascotas;
     private ViewPager vpListaMascotas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        inicializarListaMascotas();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_mascotas);
 
@@ -32,7 +34,7 @@ public class ListaMascotas extends AppCompatActivity{
 
         tlListaMascotas = (TabLayout)findViewById(R.id.tlListaMascotas);
         vpListaMascotas = (ViewPager)findViewById(R.id.vpListaMascotas);
-        setUpViewPager();/**/
+        setUpViewPager();
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -75,5 +77,30 @@ public class ListaMascotas extends AppCompatActivity{
 
         tlListaMascotas.getTabAt(0).setIcon(R.mipmap.ic_tabhome);
         tlListaMascotas.getTabAt(1).setIcon(R.mipmap.ic_rollo);
+    }
+
+    public void inicializarListaMascotas(){
+        alMascotas = new ArrayList<Mascota>();
+
+        ArrayList<String> alLikesCarrete = new ArrayList<String>();
+        ArrayList<Integer> alCarrete = new ArrayList<Integer>();
+        for(int j=0; j<5; j++){
+            alLikesCarrete.add(Integer.toString(j+1));
+            alCarrete.add(R.drawable.perro);
+        }
+        alMascotas.add(new Mascota("Perrito", "3", R.drawable.perro, alCarrete, alLikesCarrete));
+
+        alMascotas.add(new Mascota("Gatito", R.drawable.gato));
+
+        alLikesCarrete = new ArrayList<String>();
+        alCarrete = new ArrayList<Integer>();
+        for (int j=0; j<7; j++){
+            alLikesCarrete.add(Integer.toString(7-j));
+            alCarrete.add(R.drawable.conejo);
+        }
+        alMascotas.add(new Mascota("Conejito", "5", R.drawable.conejo, alCarrete, alLikesCarrete));
+
+        alMascotas.add(new Mascota("Pajarito", R.drawable.pajaro));
+        alMascotas.add(new Mascota("Koala", R.drawable.koala));
     }
 }

@@ -8,8 +8,8 @@
     <dimen name="mrgAba_ivFoto_cardview">20dp</dimen>
     <dimen name="hgt_tietComentarios_contacto">150dp</dimen>
     <dimen name="tvNombre_cardview_fotosmascotas">30sp</dimen>
-    <dimen name="len_ivFoto_cardview_fotosmascotas">75dp</dimen>
-    <dimen name="hig_ivFoto_cadview_fotosmascotas">75dp</dimen>
+    <dimen name="len_ivFoto_cardview_fotosmascotas">150dp</dimen>
+    <dimen name="hig_ivFoto_cadview_fotosmascotas">150dp</dimen>
     <dimen name="tvAbout">150dp</dimen>
     <dimen name="tvTituloAbout">50sp</dimen>
     <dimen name="tvAbout_acercade">20sp</dimen>
