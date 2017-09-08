@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hmartinez.petagram.fragments.FotosFragment">
+
+    <ImageView
+        android:id="@+id/ivPerfil_carrete"
+        android:layout_width="@dimen/len_ivFoto_cardview_fotosmascotas"
+        android:layout_height="@dimen/hig_ivFoto_cadview_fotosmascotas"
+        android:scaleType="fitXY"
+        android:src="@drawable/gato"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvNombreMascota_carrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvNombre_cardview"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/tvNombre_cardview_fotosmascotas"
+        android:layout_below="@id/ivPerfil_carrete"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/Separador_carrete"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvNombreMascota_carrete"
+        android:background="@color/colorPrimaryDark" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvCarrete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Separador_carrete"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"/>
+</RelativeLayout>

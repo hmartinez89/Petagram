@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.hmartinez.petagram.adapter.PageAdapter;
 import com.hmartinez.petagram.fragments.FotosFragment;
 import com.hmartinez.petagram.fragments.HomeFragment;
+import com.hmartinez.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
 

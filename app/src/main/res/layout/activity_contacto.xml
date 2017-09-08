@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hmartinez.petagram.Contacto">
+
+    <include layout="@layout/actionbar"
+        android:id="@+id/abContacto"/>
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/tietNombre_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tietNombre_contacto"
+        android:layout_below="@id/abContacto"/>
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/tietMail_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tietMail_contacto"
+        android:layout_below="@id/tietNombre_contacto"/>
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/tietComentario_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hgt_tietComentarios_contacto"
+        android:hint="@string/tietComentarios_contacto"
+        android:gravity="bottom"
+        android:layout_below="@id/tietMail_contacto"/>
+    <Button
+        android:id="@+id/btnEnviarMail_contacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnEnviarComentario_contacto"
+        android:textColor="@color/primary_text"
+        android:layout_below="@id/tietComentario_contacto"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

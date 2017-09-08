@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mMascotasFav"
+        android:title="@string/mMascotasFav_menu"
+        android:icon="@drawable/icons8_hotel_48"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/mContacto"
+        android:title="@string/mContacto_menu"/>
+    <item
+        android:id="@+id/mAbout"
+        android:title="@string/mAbout_menu"/>
+</menu>
