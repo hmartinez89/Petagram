@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class ListaMascotas extends AppCompatActivity {
 
     public static ArrayList<Mascota> alMascotas;
+    public static int intPosition;
     private Toolbar abListaMascotas;
     private TabLayout tlListaMascotas;
     private ViewPager vpListaMascotas;
