@@ -8,11 +8,11 @@
     android:elevation="@dimen/elev_actionbar"
     app:layout_scrollFlags="scroll|enterAlways">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tbGeneral"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:logo="@drawable/icons8_cat_footprint_filled_50"
-        app:title="@string/app_name"
-        app:titleMarginStart="@dimen/mrgIzq_tvNombre_cardview"
-        app:titleTextColor="@color/primary_text"/>
+       android:id="@+id/tbGeneral"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       app:logo="@drawable/icons8_cat_footprint_filled_50"
+       app:title="@string/app_name"
+       app:titleTextColor="@color/primary_text">
+    </android.support.v7.widget.Toolbar>
 </android.support.design.widget.AppBarLayout>

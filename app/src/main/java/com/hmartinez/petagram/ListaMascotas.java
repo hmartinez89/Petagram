@@ -3,16 +3,19 @@ package com.hmartinez.petagram;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.hmartinez.petagram.adapter.PageAdapter;
+import com.hmartinez.petagram.fragments.ContenedorFragment;
 import com.hmartinez.petagram.fragments.FotosFragment;
-import com.hmartinez.petagram.fragments.HomeFragment;
 import com.hmartinez.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -20,7 +23,9 @@ import java.util.ArrayList;
 public class ListaMascotas extends AppCompatActivity {
 
     public static ArrayList<Mascota> alMascotas;
-    public static int intPosition;
+    private ArrayList<Fragment> fragmentos = new ArrayList<>();
+
+    public static int posicion[] = new int[2];
     private Toolbar abListaMascotas;
     private TabLayout tlListaMascotas;
     private ViewPager vpListaMascotas;
@@ -37,6 +42,31 @@ public class ListaMascotas extends AppCompatActivity {
         tlListaMascotas = (TabLayout)findViewById(R.id.tlListaMascotas);
         vpListaMascotas = (ViewPager)findViewById(R.id.vpListaMascotas);
         setUpViewPager();
+
+        vpListaMascotas.addOnPageChangeListener(new OnPageChangeListener(){
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels){
+            }
+
+            @Override
+            public void onPageSelected(int position){
+                if (posicion[0] != posicion[1]){
+                    fragmentos.set(1, new FotosFragment());
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    vpListaMascotas.getAdapter().notifyDataSetChanged();
+                    tlListaMascotas.getTabAt(0).setIcon(R.mipmap.ic_tabhome);
+                    tlListaMascotas.getTabAt(1).setIcon(R.mipmap.ic_rollo);
+                    posicion[1] = posicion[0];
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -66,17 +96,14 @@ public class ListaMascotas extends AppCompatActivity {
     }
 
     private ArrayList<Fragment>agregarFragments(){
-        ArrayList<Fragment> fragmentos = new ArrayList<>();
-
-        fragmentos.add(new HomeFragment());
+        fragmentos.add(new ContenedorFragment());
         fragmentos.add(new FotosFragment());
 
         return fragmentos;
     }
     private void setUpViewPager(){
-        vpListaMascotas.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        vpListaMascotas.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments(), getApplicationContext()));
         tlListaMascotas.setupWithViewPager(vpListaMascotas);
-
         tlListaMascotas.getTabAt(0).setIcon(R.mipmap.ic_tabhome);
         tlListaMascotas.getTabAt(1).setIcon(R.mipmap.ic_rollo);
     }

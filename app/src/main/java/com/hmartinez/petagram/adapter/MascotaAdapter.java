@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hmartinez.petagram.ListaMascotas;
+import com.hmartinez.petagram.fragments.FotosFragment;
 import com.hmartinez.petagram.pojo.Mascota;
 import com.hmartinez.petagram.R;
 
@@ -42,8 +43,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.ivFoto.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                ListaMascotas.intPosition = position;
-                //Toast.makeText(v.getContext(), String.valueOf(ListaMascotas.intPosition) ,Toast.LENGTH_SHORT).show();
+                ListaMascotas.posicion[0] = position;
+                Toast.makeText(v.getContext(), String.valueOf(ListaMascotas.posicion[0]) ,Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
