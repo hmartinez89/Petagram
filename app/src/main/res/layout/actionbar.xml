@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tbPetagram"
+    android:id="@+id/abGeneral"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary"
     android:elevation="@dimen/elev_actionbar"
-    app:logo="@drawable/icons8_cat_footprint_filled_50"
-    app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-    app:title="@string/app_name"
-    app:titleMarginStart="@dimen/mrgIzq_tvNombre_cardview"
-    app:titleTextAppearance="@style/TextAppearance.AppCompat.Body1"
-    app:titleTextColor="@color/primary_text"></android.support.v7.widget.Toolbar>
+    app:layout_scrollFlags="scroll|enterAlways">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:logo="@drawable/icons8_cat_footprint_filled_50"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/primary_text">
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>

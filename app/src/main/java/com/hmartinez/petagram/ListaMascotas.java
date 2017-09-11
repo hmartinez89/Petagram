@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -15,14 +14,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class ListaMascotas extends AppCompatActivity{
-    ArrayList<Mascota> alMascotas;
+    ArrayList<DataSet> alMascotas;
     private RecyclerView rvListaMascotas;
+
+    private Toolbar abListaMascotas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_mascotas);
 
-        Toolbar abListaMascotas = (Toolbar)findViewById(R.id.abListaMascotas);
+        abListaMascotas = (Toolbar)findViewById(R.id.tbGeneral);
         setSupportActionBar(abListaMascotas);
         getSupportActionBar().setLogo(R.drawable.icons8_cat_footprint_filled_50);
 
@@ -45,32 +47,27 @@ public class ListaMascotas extends AppCompatActivity{
 
         switch(item.getItemId()){
             case R.id.mMascotasFav:
-                Collections.sort(alMascotas, Mascota.likesMascotas);
+                Collections.sort(alMascotas, DataSet.likesMascotas);
 
                 Intent i = new Intent(this, MascotasFavoritas.class);
-                int n=0;
-                while(n<5 && alMascotas.get(n).getsLikes()!="0"){
-                    i.putExtra(String.format(getResources().getString(R.string.mascotasFav_param),n),alMascotas.get(n));
-                    n++;
-                }
-                i.putExtra(String.valueOf(R.string.totalMascotasFav_param), n);
+                i.putExtra("Mascotas",alMascotas);
                 startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void inicializarAdaptador(){
-        MascotaAdapter adaptador = new MascotaAdapter(alMascotas);
+        MascotaAdapter adaptador = new MascotaAdapter(alMascotas, getApplication());
         rvListaMascotas.setAdapter(adaptador);
     }
-    
-    public void inicializarListaMascotas(){
-        alMascotas = new ArrayList<Mascota>();
 
-        alMascotas.add(new Mascota("Perrito", "3", R.drawable.perro));
-        alMascotas.add(new Mascota("Gatito", R.drawable.gato));
-        alMascotas.add(new Mascota("Conejito", "5", R.drawable.conejo));
-        alMascotas.add(new Mascota("Pajarito", R.drawable.pajaro));
-        alMascotas.add(new Mascota("Koala", R.drawable.koala));
+    public void inicializarListaMascotas(){
+        alMascotas = new ArrayList<DataSet>();
+
+        alMascotas.add(new DataSet("Perrito", "3", R.drawable.perro));
+        alMascotas.add(new DataSet("Gatito", R.drawable.gato));
+        alMascotas.add(new DataSet("Conejito", "5", R.drawable.conejo));
+        alMascotas.add(new DataSet("Pajarito", R.drawable.pajaro));
+        alMascotas.add(new DataSet("Koala", R.drawable.koala));
     }
 }

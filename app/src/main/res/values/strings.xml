@@ -5,4 +5,6 @@
     <string name="mMascotasFav_menu">Mascotas Favoritas</string>
     <string name="mascotasFav_param">Mascota%1$d</string>
     <string name="totalMascotasFav_param">Total Mascotas Favoritas</string>
+    <string name="mContacto_menu">Contacto</string>
+    <string name="mAbout_menu">Acerca de</string>
 </resources>
