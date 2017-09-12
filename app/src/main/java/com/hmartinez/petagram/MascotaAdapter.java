@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hmartinez.petagram.R;
 
@@ -36,6 +37,12 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.ivFoto.setImageResource(mascota.getIntFoto());
         holder.tvNombre.setText(mascota.getsNombre());
         holder.tvLikes.setText(mascota.getsLikes());
+        holder.imgBtnHuesoLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Likes a: "+ alMascotas.get(position).getsNombre(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
