@@ -19,7 +19,7 @@ public class ConstructorMascotas {
     public ArrayList<DataSet> obtenerDatos(){
         BaseDatos db = new BaseDatos(context);
         insertar5Mascotas(db);
-        return db.obtenerTodosLasMascotas();
+        return db.obtenerTodasLasMascotas();
     }
 
     public boolean validarInsertMascotas(){

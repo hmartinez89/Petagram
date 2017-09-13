@@ -15,14 +15,7 @@ public class ConstructorMascotasFavoritas {
     }
 
     public ArrayList<DataSet> obtenerDatos(){
-        ArrayList<DataSet> alMascotas = new ArrayList<DataSet>();
-
-        alMascotas.add(new DataSet("Perrito", 3, R.drawable.perro));
-        alMascotas.add(new DataSet("Gatito", R.drawable.gato));
-        alMascotas.add(new DataSet("Conejito", 5, R.drawable.conejo));
-        alMascotas.add(new DataSet("Pajarito", R.drawable.pajaro));
-        alMascotas.add(new DataSet("Koala", R.drawable.koala));
-
-        return alMascotas;
+        BaseDatos db = new BaseDatos(context);
+        return db.obtenerLasMascotasFavoritas();
     }
 }

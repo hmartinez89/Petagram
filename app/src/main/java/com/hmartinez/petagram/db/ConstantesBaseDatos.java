@@ -10,6 +10,6 @@ public final class ConstantesBaseDatos {
 
     public static final String TABLE_LIKES_MASCOTA              = "likes_mascotas";
     public static final String TABLE_LIKES_MASCOTA_ID           = "id";
-    public static final String TABLE_LIKES_MASCOTA_ID_MASCOTA   = "id_contacto";
+    public static final String TABLE_LIKES_MASCOTA_ID_MASCOTA   = "id_mascota";
     public static final String TABLE_LIKES_MASCOTA_NUMERO_LIKES = "numero_likes";
 }
