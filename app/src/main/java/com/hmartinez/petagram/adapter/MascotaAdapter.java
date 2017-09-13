@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hmartinez.petagram.R;
+import com.hmartinez.petagram.db.ConstructorMascotas;
 import com.hmartinez.petagram.pojo.DataSet;
 
 import java.util.ArrayList;
@@ -32,16 +33,20 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     }
 
     @Override
-    public void onBindViewHolder(MascotaViewHolder holder, final int position) {
-        DataSet mascota = alMascotas.get(position);
+    public void onBindViewHolder(final MascotaViewHolder holder, final int position) {
+        final DataSet mascota = alMascotas.get(position);
 
         holder.ivFoto.setImageResource(mascota.getFoto());
         holder.tvNombre.setText(mascota.getsNombre());
-        holder.tvLikes.setText(Integer.toString(mascota.getLikes())+ " Likes");
+        holder.tvLikes.setText(Integer.toString(mascota.getLikes()));
         holder.imgBtnHuesoLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(context);
+                constructorMascotas.darLikeMascota(mascota);
                 Toast.makeText(context, "Likes a: "+ alMascotas.get(position).getsNombre(), Toast.LENGTH_SHORT).show();
+
+                holder.tvLikes.setText(Integer.toString(constructorMascotas.obtenerLikesMascotas(mascota)));
             }
         });
     }

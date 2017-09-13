@@ -58,7 +58,16 @@ public class BaseDatos extends SQLiteOpenHelper{
             mascotaActual.setsNombre(registros.getString(1));
             mascotaActual.setFoto(registros.getInt(2));
 
-            //mascotaActual.setLikes();
+            String queryLikes = "SELECT COUNT(" + ConstantesBaseDatos.TABLE_LIKES_MASCOTA_NUMERO_LIKES +")" +
+                                "as Likes " + "FROM " + ConstantesBaseDatos.TABLE_LIKES_MASCOTA + " WHERE " +
+                                ConstantesBaseDatos.TABLE_LIKES_MASCOTA_ID_MASCOTA + "=" + mascotaActual.getId();
+
+            Cursor registrosLikes = db.rawQuery(queryLikes, null);
+            if(registrosLikes.moveToNext())
+                mascotaActual.setLikes(registrosLikes.getInt(0));
+            else
+                mascotaActual.setLikes(0);
+
             mascotas.add(mascotaActual);
         }
 
@@ -70,5 +79,44 @@ public class BaseDatos extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(ConstantesBaseDatos.TABLE_MASCOTAS, null, contentValues);
         db.close();
+    }
+
+    public void insertarLikeMascota(ContentValues contentValues){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(ConstantesBaseDatos.TABLE_LIKES_MASCOTA, null,contentValues);
+        db.close();
+    }
+
+    public int obtenerLikesMascota(DataSet mascota){
+        int likes = 0;
+
+        String query = "SELECT COUNT (" + ConstantesBaseDatos.TABLE_LIKES_MASCOTA_NUMERO_LIKES + ")" +
+                       " FROM " + ConstantesBaseDatos.TABLE_LIKES_MASCOTA +
+                       " WHERE " + ConstantesBaseDatos.TABLE_LIKES_MASCOTA_ID_MASCOTA + "=" + mascota.getId();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor registros = db.rawQuery(query, null);
+
+        if(registros.moveToNext())
+            likes = registros.getInt(0);
+
+        db.close();
+
+        return likes;
+    }
+
+    public int contarRegistrosTotales(){
+        int registrosTotales = 0;
+
+        String query = "SELECT COUNT (" + ConstantesBaseDatos.TABLE_MASCOTAS_ID + ")" +
+                       " FROM " + ConstantesBaseDatos.TABLE_MASCOTAS;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor registros = db.rawQuery(query, null);
+
+        if(registros.moveToNext())
+            registrosTotales = registros.getInt(0);
+
+        return registrosTotales;
     }
 }
