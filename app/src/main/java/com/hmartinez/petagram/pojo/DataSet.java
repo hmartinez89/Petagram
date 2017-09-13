@@ -5,6 +5,15 @@ import java.util.Comparator;
 
 public class DataSet implements Serializable{
     private String sNombre;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private int id, foto, likes ;
 
     public DataSet(String sNombre, int foto) {
@@ -20,6 +29,10 @@ public class DataSet implements Serializable{
 
     }
 
+    public DataSet() {
+
+    }
+
     public String getsNombre() { return sNombre; }
 
     public void setsNombre(String sNombre) { this.sNombre = sNombre; }
@@ -30,7 +43,7 @@ public class DataSet implements Serializable{
 
     public int getLikes() { return likes; }
 
-    public void setsLikes(int likes) { this.likes = likes; }
+    public void setLikes(int likes) { this.likes = likes; }
 
     public static Comparator<DataSet> getLikesMascotas() { return likesMascotas; }
 

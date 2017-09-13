@@ -1,5 +1,6 @@
 package com.hmartinez.petagram.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import com.hmartinez.petagram.R;
@@ -15,14 +16,35 @@ public class ConstructorMascotas {
     }
 
     public ArrayList<DataSet> obtenerDatos(){
-        ArrayList<DataSet> alMascotas = new ArrayList<DataSet>();
+        BaseDatos db = new BaseDatos(context);
+        insertar5Mascotas(db);
+        return db.obtenerTodosLasMascotas();
+    }
 
-        alMascotas.add(new DataSet("Perrito", 3, R.drawable.perro));
-        alMascotas.add(new DataSet("Gatito", R.drawable.gato));
-        alMascotas.add(new DataSet("Conejito", 5, R.drawable.conejo));
-        alMascotas.add(new DataSet("Pajarito", R.drawable.pajaro));
-        alMascotas.add(new DataSet("Koala", R.drawable.koala));
+    public void insertar5Mascotas(BaseDatos db){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Perrito");
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.perro);
+        db.insertarMascota(contentValues);
 
-        return alMascotas;
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Gatito");
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.gato);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Conejito");
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.conejo);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Pajarito");
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.pajaro);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Koala");
+        contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.koala);
+        db.insertarMascota(contentValues);
     }
 }
