@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListaMascotas">
+        <activity android:name=".listaMascotasView.ListaMascotas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MascotasFavoritas"
-            android:parentActivityName=".ListaMascotas">
+        <activity android:name=".mascotasFavoritasView.MascotasFavoritas"
+            android:parentActivityName=".listaMascotasView.ListaMascotas">
 
            <!--Soporte versiones anteriores a 4.0-->
            <meta-data
                android:name="android.support.PARENT_ACTIVITY"
-               android:value=".ListaMascotas"></meta-data>
+               android:value=".listaMascotasView.ListaMascotas"></meta-data>
         </activity>
     </application>
 </manifest>

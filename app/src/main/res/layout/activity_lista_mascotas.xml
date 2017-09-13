@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hmartinez.petagram.ListaMascotas">
+    tools:context="com.hmartinez.petagram.listaMascotasView.ListaMascotas">
 
     <include layout="@layout/actionbar"
         android:id="@+id/abListaMascotas" />

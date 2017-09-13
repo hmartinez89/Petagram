@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/tools"
+    android:id="@+id/cvMascotaFav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    cardview:cardCornerRadius="@dimen/cornerRadius_cardview">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivFoto_mascotaFav_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="@dimen/mrgAba_ivFoto_cardview"
+            android:src="@drawable/conejo"
+            cardview:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvNombre_mascotaFav_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvNombre_cardview"
+            android:textAlignment="center"
+            android:layout_alignBottom="@+id/ivFoto_mascotaFav_cardview"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tvLikes_mascotaFav_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignBaseline="@id/tvNombre_mascotaFav_cardview"
+            android:layout_toEndOf="@+id/tvNombre_mascotaFav_cardview"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/tvLikes_cardview"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/ivHuesoLikes_mascotaFav_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icons8_dog_bone_48"
+            cardview:ignore="ContentDescription"
+            android:layout_alignBottom="@+id/ivFoto_mascotaFav_cardview"
+            android:layout_toEndOf="@+id/tvLikes_mascotaFav_cardview" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,4 +1,4 @@
-package com.hmartinez.petagram;
+package com.hmartinez.petagram.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,12 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hmartinez.petagram.R;
+import com.hmartinez.petagram.pojo.DataSet;
 
 import java.util.ArrayList;
 
 public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder>{
     private Context context;
-    ArrayList<DataSet> alMascotas;
+    private ArrayList<DataSet> alMascotas;
 
     public MascotaAdapter(ArrayList<DataSet> mascotas, Context context){
         super();
@@ -34,9 +35,9 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     public void onBindViewHolder(MascotaViewHolder holder, final int position) {
         DataSet mascota = alMascotas.get(position);
 
-        holder.ivFoto.setImageResource(mascota.getIntFoto());
+        holder.ivFoto.setImageResource(mascota.getFoto());
         holder.tvNombre.setText(mascota.getsNombre());
-        holder.tvLikes.setText(mascota.getsLikes());
+        holder.tvLikes.setText(Integer.toString(mascota.getLikes())+ " Likes");
         holder.imgBtnHuesoLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,11 +58,11 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
         public MascotaViewHolder(View itemView) {
             super(itemView);
-            ivFoto = (ImageView) itemView.findViewById(R.id.ivFoto_cardview);
-            imgBtnHuesoLike = (ImageButton) itemView.findViewById(R.id.imgBtnHuesoLike);
-            tvNombre = (TextView) itemView.findViewById(R.id.tvNombre_cardview);
-            tvLikes = (TextView) itemView.findViewById(R.id.tvLikes_cardview);
-            ivHuesoLikes = (ImageView) itemView.findViewById(R.id.ivHuesoLikes);
+            ivFoto              = (ImageView)   itemView.findViewById(R.id.ivFoto_cardview);
+            imgBtnHuesoLike     = (ImageButton) itemView.findViewById(R.id.imgBtnHuesoLike);
+            tvNombre            = (TextView)    itemView.findViewById(R.id.tvNombre_cardview);
+            tvLikes             = (TextView)    itemView.findViewById(R.id.tvLikes_cardview);
+            ivHuesoLikes        = (ImageView)   itemView.findViewById(R.id.ivHuesoLikes);
         }
     }
 }

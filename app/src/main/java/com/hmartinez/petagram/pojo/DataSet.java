@@ -1,22 +1,22 @@
-package com.hmartinez.petagram;
+package com.hmartinez.petagram.pojo;
 
 import java.io.Serializable;
 import java.util.Comparator;
 
 public class DataSet implements Serializable{
-    private String sNombre, sLikes;
-    private int intFoto;
+    private String sNombre;
+    private int id, foto, likes ;
 
-    public DataSet(String sNombre, int imgFoto) {
+    public DataSet(String sNombre, int foto) {
         this.sNombre = sNombre;
-        this.intFoto = imgFoto;
-        this.sLikes = "0";
+        this.foto = foto;
+        this.likes = 0;
     }
 
-    public DataSet(String sNombre, String sLikes, int imgFoto) {
+    public DataSet(String sNombre, int likes, int foto) {
         this.sNombre = sNombre;
-        this.intFoto = imgFoto;
-        this.sLikes = sLikes;
+        this.foto = foto;
+        this.likes = likes;
 
     }
 
@@ -24,13 +24,13 @@ public class DataSet implements Serializable{
 
     public void setsNombre(String sNombre) { this.sNombre = sNombre; }
 
-    public int getIntFoto() { return intFoto; }
+    public int getFoto() { return foto; }
 
-    public void setIntFoto(int imgFoto) { this.intFoto = imgFoto; }
+    public void setFoto(int foto) { this.foto = foto; }
 
-    public String getsLikes() { return sLikes; }
+    public int getLikes() { return likes; }
 
-    public void setsLikes(String sLikes) { this.sLikes = sLikes; }
+    public void setsLikes(int likes) { this.likes = likes; }
 
     public static Comparator<DataSet> getLikesMascotas() { return likesMascotas; }
 
@@ -39,12 +39,9 @@ public class DataSet implements Serializable{
     public static Comparator<DataSet> likesMascotas = new Comparator<DataSet>() {
         @Override
         public int compare(DataSet o1, DataSet o2) {
-            String mascotaLikes1 = o1.getsLikes();
-            String mascotaLikes2 = o2.getsLikes();
+            String mascotaLikes1 = Integer.toString(o1.getLikes());
+            String mascotaLikes2 = Integer.toString(o2.getLikes());
             return mascotaLikes2.compareTo(mascotaLikes1);
         }
     };
-
-    public static class MascotaAdapter {
-    }
 }
