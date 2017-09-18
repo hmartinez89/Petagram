@@ -4,57 +4,53 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 public class DataSet implements Serializable{
-    private String sNombre;
+    private String id, fullName, urlFoto;
+    private int likes;
 
-    public int getId() {
-        return id;
-    }
+    public DataSet() {    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    private int id, foto, likes ;
-
-    public DataSet(String sNombre, int foto) {
-        this.sNombre = sNombre;
-        this.foto = foto;
+    public DataSet(String fullName, String urlFoto) {
+        this.fullName = fullName;
+        this.urlFoto = urlFoto;
         this.likes = 0;
     }
 
-    public DataSet(String sNombre, int likes, int foto) {
-        this.sNombre = sNombre;
-        this.foto = foto;
+    public DataSet(String fullName, int likes, String urlFoto) {
+        this.fullName = fullName;
+        this.urlFoto = urlFoto;
         this.likes = likes;
 
     }
 
-    public DataSet() {
-
+    public String getId() {
+        return id;
     }
 
-    public String getsNombre() { return sNombre; }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    public void setsNombre(String sNombre) { this.sNombre = sNombre; }
+    public String getFullName() {
+        return fullName;
+    }
 
-    public int getFoto() { return foto; }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-    public void setFoto(int foto) { this.foto = foto; }
+    public String getUrlFoto() {
+        return urlFoto;
+    }
 
-    public int getLikes() { return likes; }
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
 
-    public void setLikes(int likes) { this.likes = likes; }
+    public int getLikes() {
+        return likes;
+    }
 
-    public static Comparator<DataSet> getLikesMascotas() { return likesMascotas; }
-
-    public static void setLikesMascotas(Comparator<DataSet> likesMascotas) { DataSet.likesMascotas = likesMascotas; }
-
-    public static Comparator<DataSet> likesMascotas = new Comparator<DataSet>() {
-        @Override
-        public int compare(DataSet o1, DataSet o2) {
-            String mascotaLikes1 = Integer.toString(o1.getLikes());
-            String mascotaLikes2 = Integer.toString(o2.getLikes());
-            return mascotaLikes2.compareTo(mascotaLikes1);
-        }
-    };
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
 }

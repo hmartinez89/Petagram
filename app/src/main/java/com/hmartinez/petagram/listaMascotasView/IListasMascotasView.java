@@ -11,6 +11,8 @@ public interface IListasMascotasView {
 
     public void generarLinearLayout();
 
+    public void generarGridLayout();
+
     public MascotaAdapter crearAdaptador(ArrayList<DataSet> mascotas);
 
     public void inicializarAdaptadorRV(MascotaAdapter adaptador);

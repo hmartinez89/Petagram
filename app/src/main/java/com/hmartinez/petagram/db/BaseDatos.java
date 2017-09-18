@@ -52,7 +52,7 @@ public class BaseDatos extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor registros = db.rawQuery(query, null);
 
-        while(registros.moveToNext()){
+        /*while(registros.moveToNext()){
             DataSet mascotaActual = new DataSet();
             mascotaActual.setId(registros.getInt(0));
             mascotaActual.setsNombre(registros.getString(1));
@@ -69,7 +69,7 @@ public class BaseDatos extends SQLiteOpenHelper{
                 mascotaActual.setLikes(0);
 
             mascotas.add(mascotaActual);
-        }
+        }*/
 
         db.close();
         return mascotas;
@@ -84,7 +84,7 @@ public class BaseDatos extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor registros = db.rawQuery(query, null);
 
-        while(registros.moveToNext()){
+        /*while(registros.moveToNext()){
             DataSet mascotaFavoritaActual = new DataSet();
             mascotaFavoritaActual.setId(registros.getInt(1));
 
@@ -105,11 +105,11 @@ public class BaseDatos extends SQLiteOpenHelper{
 
             Cursor registrosNombreYFoto = db.rawQuery(queryFoto, null);
             if(registrosNombreYFoto.moveToNext()){
-                mascotaFavoritaActual.setsNombre(registrosNombreYFoto.getString(0));
-                mascotaFavoritaActual.setFoto(registrosNombreYFoto.getInt(1));
+                mascotaFavoritaActual.setFullName(registrosNombreYFoto.getString(0));
+                //mascotaFavoritaActual.setUrlFoto(registrosNombreYFoto.getInt(1));
             }
             mascotasFavoritas.add(mascotaFavoritaActual);
-        }
+        }*/
         db.close();
         return mascotasFavoritas;
     }

@@ -31,8 +31,8 @@ public class MascotasFavoritasAdapter extends RecyclerView.Adapter<MascotasFavor
     @Override
     public void onBindViewHolder(MascotasFavoritasViewHolder holder, int position) {
         DataSet mascota = mascotasFavoritas.get(position);
-        holder.ivFoto.setImageResource(mascota.getFoto());
-        holder.tvNombre.setText(mascota.getsNombre());
+        //holder.ivFoto.setImageResource(mascota.getUrlFoto());
+        holder.tvNombre.setText(mascota.getFullName());
         holder.tvLikes.setText(Integer.toString(mascota.getLikes()));
     }
 
