@@ -9,13 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.hmartinez.petagram.configurarCuentaView.ConfigurarCuenta;
 import com.hmartinez.petagram.pojo.DataSet;
 import com.hmartinez.petagram.adapter.MascotaAdapter;
 import com.hmartinez.petagram.mascotasFavoritasView.MascotasFavoritas;
 import com.hmartinez.petagram.R;
 import com.hmartinez.petagram.presentadorListaMascotas.IListaMascotasPresenter;
 import com.hmartinez.petagram.presentadorListaMascotas.ListaMascotasPresenter;
+import com.hmartinez.petagram.restAPI.ConstantesRestAPI;
 
 import java.util.ArrayList;
 
@@ -34,6 +37,7 @@ public class ListaMascotas extends AppCompatActivity implements IListasMascotasV
 
         rvListaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
         presenter = new ListaMascotasPresenter(this, getApplicationContext());
+        //Toast.makeText(this, ConstantesRestAPI.URL_GET_USER_INFO, Toast.LENGTH_LONG).show();
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -43,10 +47,17 @@ public class ListaMascotas extends AppCompatActivity implements IListasMascotasV
 
     public boolean onOptionsItemSelected(MenuItem item){
 
+        Intent i;
         switch(item.getItemId()){
             case R.id.mMascotasFav:
-                Intent i = new Intent(this, MascotasFavoritas.class);
+                i = new Intent(this, MascotasFavoritas.class);
                 startActivity(i);
+                break;
+
+            case R.id.mConfigurarCuenta:
+                i = new Intent(this, ConfigurarCuenta.class);
+                startActivity(i);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

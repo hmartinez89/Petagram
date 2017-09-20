@@ -26,5 +26,13 @@
                android:name="android.support.PARENT_ACTIVITY"
                android:value=".listaMascotasView.ListaMascotas"></meta-data>
         </activity>
+        <activity android:name=".configurarCuentaView.ConfigurarCuenta"
+            android:parentActivityName=".listaMascotasView.ListaMascotas">
+
+            <!--Soporte versiones anteriores a 4.0-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".listaMascotasView.ListaMascotas"></meta-data>
+        </activity>
     </application>
 </manifest>

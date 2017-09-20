@@ -6,4 +6,7 @@
         android:title="@string/mMascotasFav_menu"
         android:icon="@drawable/icons8_hotel_48"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/mConfigurarCuenta"
+        android:title="@string/mConfigurarCuenta_menu"/>
 </menu>

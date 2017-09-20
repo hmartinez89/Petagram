@@ -1,9 +1,6 @@
 package com.hmartinez.petagram.pojo;
 
-import java.io.Serializable;
-import java.util.Comparator;
-
-public class DataSet implements Serializable{
+public class DataSet{
     private String id, fullName, urlFoto;
     private int likes;
 
@@ -19,7 +16,6 @@ public class DataSet implements Serializable{
         this.fullName = fullName;
         this.urlFoto = urlFoto;
         this.likes = likes;
-
     }
 
     public String getId() {

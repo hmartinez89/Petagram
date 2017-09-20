@@ -7,4 +7,9 @@
     <string name="totalMascotasFav_param">Total Mascotas Favoritas</string>
     <string name="mContacto_menu">Contacto</string>
     <string name="mAbout_menu">Acerca de</string>
+    <string name="mConfigurarCuenta_menu">Configurar Cuenta</string>
+    <string name="tiet_configurar_cuenta">Escribe tu usuario</string>
+    <string name="btn_guardar_configurar_cuenta">Guardar Cuenta</string>
+    <string name="spConfigurarCuenta">Configuracion de cuenta</string>
+    <string name="spDatoUsuario">Usuario</string>
 </resources>
